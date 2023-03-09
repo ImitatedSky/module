@@ -8,9 +8,9 @@ torch.save(model,"save.pt")
 
 載入
 
-mymodel = torch.load('save.pt', map_location=torch.device(device))
+model = torch.load('save.pt', map_location=torch.device(device))
 
-my_cnn_model = my_cnn_model.to(device) # must have ? or not
+model = model.to(device) # must have ? or not
 
 
 2.只保存訓練完的權重
@@ -21,4 +21,4 @@ torch.save(model.state_dict(),"save.pt")
 
 model.load_state_dict(torch.load('save.pt', map_location=device))
 
-my_cnn_model = my_cnn_model.to(device) # must have ? or not
+model = model.to(device) # must have ? or not
